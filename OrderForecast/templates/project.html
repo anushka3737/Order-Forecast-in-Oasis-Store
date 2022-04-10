@@ -1,0 +1,42 @@
+{%extends "navbar.html" %}
+{%block content%}
+<div class="jumbotron jumbotron-fluid">
+
+<video autoplay muted loop poster="https://dummyimage.com/900x400/000/fff">
+    <source src="" data-src="https://upload.wikimedia.org/wikipedia/commons/7/79/Big_Buck_Bunny_small.mp4" type="video/mp4">
+    <source src="" data-src="https://upload.wikimedia.org/wikipedia/commons/7/79/Big_Buck_Bunny_small.webm" type="video/webm">
+    <source src="" data-src="https://upload.wikimedia.org/wikipedia/commons/7/79/Big_Buck_Bunny_small.ogv" type="video/ogg">
+</video>
+
+  <div class="container text-white">
+
+    <h1 class="display-4">Oasis Store Order Forecast</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <a class="btn btn-primary btn-lg" href="https://github.com/anushka3737/Order-Forecast-in-Oasis-Store" role="button">Learn more</a>
+
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.jumbotron -->
+<script>
+    function deferVideo() {
+
+    //defer html5 video loading
+  $("video source").each(function() {
+    var sourceFile = $(this).attr("data-src");
+    $(this).attr("src", sourceFile);
+    var video = this.parentElement;
+    video.load();
+    // uncomment if video is not autoplay
+    //video.play();
+  });
+
+}
+window.onload = deferVideo;
+
+
+
+</script>
+{% endblock %}
