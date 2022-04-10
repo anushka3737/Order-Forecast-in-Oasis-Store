@@ -2,14 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>WELCOME -{{title}}</title>
 </head>
 <body>
-    <h1>Login Authentication System in flask</h1>
-    <a href=" {{url_for('login')}}">Login Page</a><br>
-    
-    <a href=" {{url_for('register')}}">register Page</a><br>
+    <div class='navbar'>
+        <nav>
+            <ul>
+                <div class="login-register">
+                    <li><a href="{{url_for('login')}}">Login</a></li>
+                    <li><a href="{{url_for('register')}}">Register</a></li>
+                </div>
+            </ul>
+        </nav>
+    </div>
+    <h1>Order Forecast in Oasis Store</h1><br><br>
+
+    <p>"An internal e-commerce site in VMware to order IT Assets."</p>
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        h1 {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .navbar {
+            height: 80px;
+            background: black;
+        }
+
+        .navbar > nav > ul {
+            display: flex;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 30px;
+            justify-content: space-between;
+        }
+
+        .navbar > nav > ul > li > a {
+            color: #0077ff;
+            text-decoration: none;
+
+        }
+
+        .login-register {
+            display: flex;
+        }
+
+
+        .login-register > li > a {
+            color: #0077ff;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+
+        .login-register > li > a:hover {
+            background-color: white;
+            padding: 10px;
+            color: #0077ff;
+            border-radius: 4px;
+            transition: .3s;
+        }
+
+
+
+    </style>
 </body>
 </html>
