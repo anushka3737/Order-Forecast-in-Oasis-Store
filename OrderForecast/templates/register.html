@@ -1,26 +1,104 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Register- {{title}}</title>
 </head>
 <body>
-    <h1>
-        Register Page
-    </h1>
-    <form method="POST" action="">
+    <div class='navbar'>
+        <nav>
+            <ul>
+                <li><a href="#">WELCOME</a></li>
+                <div class="login-register">
+                    <li><a href="{{url_for('login')}}">Login</a></li>
+                    <li><a href="{{url_for('register')}}">Register</a></li>
+                </div>
+            </ul>
+        </nav>
+    </div>
+    <h1>Register</h1>
 
-        {{ form.hidden_tag() }}
-        {{ form.username }}
-        {{ form.password }}
-        {{ form.submit }}
+    <div class="signup-form">
+        <form method='POST' action=''>
+            {{form.hidden_tag()}}
+            {{form.email}}
+            {{form.username}}
+            {{form.password}}
+            {{form.submit}}
+        </form>
+    </div>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
 
 
+        h1 {
+            margin-top: 40px;
+            text-align: center;
+        }
 
-    </form>
-    <a href=" {{url_for('login')}}">Already have an account? Log In</a><br>
+        .navbar {
+            height: 80px;
+            background: black;
+        }
 
+        .navbar > nav > ul {
+            display: flex;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 30px;
+            justify-content: space-between;
+        }
+
+        .navbar > nav > ul > li > a {
+            color: #0077ff;
+            text-decoration: none;
+
+        }
+
+        .login-register {
+            display: flex;
+        }
+
+
+        .login-register > li > a {
+            color: #0077ff;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+
+        .login-register > li > a:hover {
+            background-color: white;
+            padding: 10px;
+            color: #0077ff;
+            border-radius: 4px;
+            transition: .3s;
+        }
+
+        .signup-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 15%;
+            margin-top: 10px;
+        }
+
+        form > input {
+            margin-bottom: 10px;
+            padding: 4px;
+        }
+    </style>
 </body>
 </html>
